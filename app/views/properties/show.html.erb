@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="page-header">Property</h1>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @property.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @property.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @property.zip %>
+</p>
+
+<p>
+  <h2 class="page-header">Details</h2>
+  <table class="table">
+    <thead>
+      <th>Prospects Name - Business</th>
+      <th>Source Type</th>
+      <th>Source Of Contact</th>
+      <th>Status</th>
+      <th>Date Of Content</th>
+      <th>Requirements</th>
+      <th>Comments</th>
+    </thead>
+    <% @property.property_details.each do |pd| %>
+    <tr>
+      <td><%= pd.name %></td>
+      <td><%= pd.source_type %></td>
+      <td><%= pd.source_contact %></td>
+      <td><%= pd.status %></td>
+      <td><%= pd.date_of_contact %></td>
+      <td><%= pd.requirements %></td>
+      <td><%= pd.comments %></td>
+    </tr>
+    <% end %>
+  </table>
+</p>
+
+<p>
+  <%= link_to 'New Property detail', new_property_detail_path(id: @property.id) %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

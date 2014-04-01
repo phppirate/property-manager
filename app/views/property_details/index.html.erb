@@ -1,0 +1,41 @@
+<h1>Listing Property Details</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Name</th>
+      <th>Source type</th>
+      <th>Source contact</th>
+      <th>Status</th>
+      <th>Date of contact</th>
+      <th>Requirements</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_details.each do |property_detail| %>
+      <tr>
+        <td><%= property_detail.property_id %></td>
+        <td><%= property_detail.name %></td>
+        <td><%= property_detail.source_type %></td>
+        <td><%= property_detail.source_contact %></td>
+        <td><%= property_detail.status %></td>
+        <td><%= property_detail.date_of_contact %></td>
+        <td><%= property_detail.requirements %></td>
+        <td><%= property_detail.comments %></td>
+        <td><%= link_to 'Show', property_detail %></td>
+        <td><%= link_to 'Edit', edit_property_detail_path(property_detail) %></td>
+        <td><%= link_to 'Destroy', property_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property detail', new_property_detail_path(id: 1) %>

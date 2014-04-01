@@ -1,0 +1,45 @@
+<%= form_for(@property_detail) do |f| %>
+  <% if @property_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property_detail.errors.count, "error") %> prohibited this property_detail from being saved:</h2>
+
+      <ul>
+      <% @property_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :property_id , value: params[:id] %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :source_type %><br>
+    <%= f.text_field :source_type %>
+  </div>
+  <div class="field">
+    <%= f.label :source_contact %><br>
+    <%= f.text_area :source_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_contact %><br>
+    <%= f.text_field :date_of_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :requirements %><br>
+    <%= f.text_field :requirements %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

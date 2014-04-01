@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @property_detail.property.address %></h1>
+
+<p>
+  <strong>Property:</strong>
+  <%= @property_detail.property_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @property_detail.name %>
+</p>
+
+<p>
+  <strong>Source type:</strong>
+  <%= @property_detail.source_type %>
+</p>
+
+<p>
+  <strong>Source contact:</strong>
+  <%= @property_detail.source_contact %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @property_detail.status %>
+</p>
+
+<p>
+  <strong>Date of contact:</strong>
+  <%= @property_detail.date_of_contact %>
+</p>
+
+<p>
+  <strong>Requirements:</strong>
+  <%= @property_detail.requirements %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @property_detail.comments %>
+</p>
+
+<%= link_to 'Edit', edit_property_detail_path(@property_detail) %> |
+<%= link_to 'Back', property_details_path %>
